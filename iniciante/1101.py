@@ -1,34 +1,26 @@
-sequencia = []
-soma = 0
+while True:
+  M, N = [int(o) for o in input().split()]
+  if M == 0 or N == 0:
+    break
+  else:
+    if N > M:
+      N, M = M, N
+    
+    #USANDO MATRIZ
 
-M, N = input().split()
-M = int(M)
-N = int(N)
+    #soma = 0
+    #lista = []
+    #for s in range(N,M+1):
+    #  soma = soma+s
+    #  lista.append(s)
+    #print(lista)
+    #print(soma)
 
-while M > 0 and N > 0: 
-    if M < N:
-        for seq in range(M,N+1):
-            soma = soma + seq
-            sequencia.append(seq)
-        print(*sequencia,'Sum=%i'%(soma))
-        sequencia.clear()
-        soma = 0
+    #USANDO STRING
 
-    elif M > N:
-        for seq in range(N,M+1):
-            soma = soma + seq
-            sequencia.append(seq)
-        print(*sequencia,'Sum=%i'%(soma))
-        sequencia.clear()
-        soma = 0
-
-    #else:
-        #soma = M
-        #sequencia.append(N)
-        #print(*sequencia,'Sum=%i'%(soma))
-        #sequencia.clear()
-        #soma = 0
-
-    M, N = input().split()
-    M = int(M)
-    N = int(N)
+    lista = ''
+    soma = 0
+    for s in range(N,M+1):
+      lista = lista+str(s)+' '
+      soma = soma+s
+    print(lista+'Sum=%i'%soma)
